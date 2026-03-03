@@ -122,11 +122,11 @@ export function Hero() {
       >
         <div className="relative">
           {/* Circular Ornament */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[450px] sm:h-[450px] border border-blue-500/10 rounded-full animate-[spin_20s_linear_infinite]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-[450px] sm:h-[450px] border border-blue-500/10 rounded-full animate-[spin_20s_linear_infinite]" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[350px] sm:h-[350px] border border-blue-500/5 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
           
           {/* Background Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-80 sm:h-80 bg-blue-600/10 blur-[80px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-80 sm:h-80 bg-blue-600/[0.15] blur-[80px] rounded-full" />
           
           <ShuttleAnimation />
         </div>

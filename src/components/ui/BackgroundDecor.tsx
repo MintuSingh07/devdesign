@@ -1,12 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export function BackgroundDecor() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) return null
+
+  // Fixed set of random positions to avoid hydration mismatch
+  const particles = Array.from({ length: 15 }).map((_, i) => ({
+    left: `${(i * 17) % 100}%`,
+    top: `${(i * 23) % 100}%`,
+    duration: 5 + (i % 5),
+    delay: i % 3
+  }))
+
   return (
     <div className="fixed inset-0 -z-50 h-full w-full overflow-hidden bg-[#030303]">
       {/* Noise Texture */}
-      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay pointer-events-none">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <filter id="noise">
             <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
@@ -17,61 +34,76 @@ export function BackgroundDecor() {
 
       {/* Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.15] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+        className="absolute inset-0 opacity-[0.12] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
         style={{
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }}
       />
 
-      {/* Animated Orbs */}
+      {/* Floating Stars/Particles */}
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          initial={{ 
+            opacity: 0.2,
+            scale: 0.5
+          }}
+          animate={{
+            y: ["-20px", "20px", "-20px"],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: p.duration,
+            repeat: Infinity,
+            delay: p.delay,
+            ease: "easeInOut",
+          }}
+          className="absolute h-1 w-1 rounded-full bg-white/40 shadow-[0_0_8px_white/20]"
+          style={{ left: p.left, top: p.top }}
+        />
+      ))}
+
+      {/* Large Glowing Orbs */}
       <motion.div
         animate={{
-          x: [0, 100, -50, 0],
-          y: [0, -50, 50, 0],
-          scale: [1, 1.2, 0.9, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute left-[10%] top-[20%] h-[400px] w-[400px] rounded-full bg-blue-600/10 blur-[120px]"
-      />
-      
-      <motion.div
-        animate={{
-          x: [0, -80, 120, 0],
-          y: [0, 100, -60, 0],
-          scale: [1, 0.8, 1.1, 1],
+          x: [0, 60, -40, 0],
+          y: [0, -40, 40, 0],
+          scale: [1, 1.1, 0.9, 1],
         }}
         transition={{
           duration: 25,
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute right-[10%] top-[40%] h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[140px]"
+        className="absolute left-[15%] top-[15%] h-[500px] w-[500px] rounded-full bg-blue-600/[0.08] blur-[120px]"
       />
-
+      
       <motion.div
         animate={{
-          x: [0, 50, -100, 0],
-          y: [0, -80, 40, 0],
-          scale: [1, 1.3, 0.8, 1],
+          x: [0, -70, 90, 0],
+          y: [0, 80, -50, 0],
+          scale: [1, 0.85, 1.15, 1],
         }}
         transition={{
-          duration: 18,
+          duration: 30,
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute bottom-[10%] left-[30%] h-[450px] w-[450px] rounded-full bg-blue-500/5 blur-[120px]"
+        className="absolute right-[10%] top-[35%] h-[600px] w-[600px] rounded-full bg-purple-600/[0.08] blur-[150px]"
       />
 
-      {/* Aesthetic Light Beams (Subtle) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] left-[20%] h-[150%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-blue-500/10 to-transparent" />
-        <div className="absolute -top-[20%] left-[60%] h-[150%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-purple-500/5 to-transparent" />
+      {/* Bottom Glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-[300px] bg-gradient-to-t from-blue-600/[0.05] to-transparent blur-[60px]" />
+
+      {/* Light Beams */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+        <div className="absolute top-[-20%] left-[30%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-blue-500/20 to-transparent shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
+        <div className="absolute top-[-20%] left-[70%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-purple-500/10 to-transparent shadow-[0_0_15px_rgba(168,85,247,0.2)]" />
       </div>
+
+      {/* Subtle Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.4)_100%)] pointer-events-none" />
     </div>
   )
 }

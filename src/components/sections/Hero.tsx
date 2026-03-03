@@ -30,7 +30,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="max-w-4xl bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-4xl font-black tracking-tighter text-transparent sm:text-7xl leading-[1.1] font-display"
+              className="max-w-4xl bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-5xl font-black tracking-tighter text-transparent sm:text-7xl leading-[1.05] sm:leading-[1.1] font-display"
             >
               Designing <span className="text-blue-500">Aesthetics</span>,<br className="hidden sm:block" /> Developing <span className="text-blue-500">Impact</span>.
             </motion.h1>
@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-xl text-base sm:text-lg text-zinc-400 font-medium leading-relaxed font-sans"
+            className="max-w-xl text-base sm:text-lg text-zinc-400 font-medium leading-relaxed font-sans px-4 sm:px-0"
           >
             Bridging the gap between pixel-perfect design and high-performance code. 
             2 years of delivering premium digital experiences.
@@ -49,38 +49,37 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:justify-start mt-4 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:justify-start mt-6 w-full sm:w-auto px-4 sm:px-0"
           >
-            <button className="group relative flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-white px-8 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-white/5 overflow-hidden font-display">
-
-            <span className="relative z-10">Get in Touch</span>
-            <div className="absolute inset-0 bg-blue-50 opacity-0 transition-opacity group-hover:opacity-100" />
-            <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </button>
-          
-          <div className="flex items-center gap-6 sm:gap-8 px-8 py-3 rounded-full border border-white/5 bg-white/5 backdrop-blur-sm">
-            <motion.div 
-              whileHover={{ y: -4, color: "#3b82f6" }}
-              className="flex items-center gap-2 cursor-pointer transition-colors" title="Developer"
-            >
-              <Code className="h-5 w-5" />
-            </motion.div>
-            <div className="h-4 w-px bg-zinc-800" />
-            <motion.div 
-              whileHover={{ y: -4, color: "#a855f7" }}
-              className="flex items-center gap-2 cursor-pointer transition-colors" title="Designer"
-            >
-              <Layout className="h-5 w-5" />
-            </motion.div>
-            <div className="h-4 w-px bg-zinc-800" />
-            <motion.div 
-              whileHover={{ y: -4, color: "#22c55e" }}
-              className="flex items-center gap-2 cursor-pointer transition-colors" title="Terminal"
-            >
-              <Terminal className="h-5 w-5" />
-            </motion.div>
-          </div>
-        </motion.div>
+            <button className="group relative flex h-16 w-full sm:w-auto items-center justify-center gap-2 rounded-2xl sm:rounded-full bg-white px-10 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-2xl shadow-white/10 overflow-hidden font-display">
+              <span className="relative z-10">Get in Touch</span>
+              <div className="absolute inset-0 bg-blue-50 opacity-0 transition-opacity group-hover:opacity-100" />
+              <ArrowRight className="relative z-10 h-5 w-4 transition-transform group-hover:translate-x-1" />
+            </button>
+            
+            <div className="flex w-full sm:w-auto items-center justify-center gap-8 px-8 py-4 rounded-2xl sm:rounded-full border border-white/5 bg-white/5 backdrop-blur-md">
+              <motion.div 
+                whileHover={{ y: -4, color: "#3b82f6" }}
+                className="flex items-center gap-2 cursor-pointer transition-colors" title="Developer"
+              >
+                <Code className="h-6 w-6 sm:h-5 sm:w-5" />
+              </motion.div>
+              <div className="h-5 w-px bg-zinc-800" />
+              <motion.div 
+                whileHover={{ y: -4, color: "#a855f7" }}
+                className="flex items-center gap-2 cursor-pointer transition-colors" title="Designer"
+              >
+                <Layout className="h-6 w-6 sm:h-5 sm:w-5" />
+              </motion.div>
+              <div className="h-5 w-px bg-zinc-800" />
+              <motion.div 
+                whileHover={{ y: -4, color: "#22c55e" }}
+                className="flex items-center gap-2 cursor-pointer transition-colors" title="Terminal"
+              >
+                <Terminal className="h-6 w-6 sm:h-5 sm:w-5" />
+              </motion.div>
+            </div>
+          </motion.div>
       </div>
 
       {/* Shuttle Section */}

@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Globe, Palette, ExternalLink, Github } from "lucide-react"
+import Image from "next/image"
 
 type ProjectType = "web" | "ui"
 

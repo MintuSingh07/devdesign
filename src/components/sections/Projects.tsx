@@ -202,12 +202,13 @@ function ProjectsContent() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="mb-3 text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="mb-8 text-sm leading-relaxed text-zinc-400/80">
-                    {project.description}
-                  </p>
+                    <h3 className="mb-3 text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors font-display">
+                      {project.title}
+                    </h3>
+                    <p className="mb-8 text-sm leading-relaxed text-zinc-400/80 font-sans">
+                      {project.description}
+                    </p>
+
                   <div className="mt-auto flex items-center justify-between">
                     <div className="flex items-center gap-6">
                       {project.links.demo && (

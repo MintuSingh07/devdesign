@@ -31,7 +31,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="max-w-4xl bg-gradient-to-b from-white via-white to-white/60 bg-clip-text text-[2.75rem] leading-[1.1] font-black tracking-tight text-transparent sm:text-7xl sm:leading-[1.1] font-display"
+                className="max-w-4xl bg-gradient-to-b from-white via-white to-white/60 bg-clip-text text-[2.5rem] leading-[1.1] font-black tracking-tight text-transparent sm:text-7xl sm:leading-[1.1] font-display"
               >
                 Designing <span className="text-blue-500">Aesthetics</span>,<br className="hidden sm:block" /> Developing <span className="text-blue-500">Impact</span>.
               </motion.h1>
@@ -40,7 +40,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="max-w-xl text-base sm:text-lg text-zinc-400/80 font-medium leading-relaxed font-sans px-2 sm:px-0"
+              className="max-w-xl text-base sm:text-lg text-zinc-400/80 font-medium leading-relaxed font-sans px-2 sm:px-0 mt-2 sm:mt-0"
             >
               Bridging the gap between pixel-perfect design and high-performance code. 
               <span className="hidden sm:inline"> Delivering premium digital experiences.</span>

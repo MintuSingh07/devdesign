@@ -39,6 +39,24 @@ export function BackgroundDecor() {
         </svg>
       </div>
 
+      {/* Spotlight from top */}
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[800px] w-[1000px] bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.1)_0%,transparent_70%)] opacity-60 pointer-events-none" />
+
+      {/* Mouse Follow Glow */}
+      <motion.div
+        animate={{
+          x: mousePos.x - 400,
+          y: mousePos.y - 400,
+        }}
+        transition={{
+          type: "spring",
+          damping: 30,
+          stiffness: 80,
+          mass: 1,
+        }}
+        className="pointer-events-none absolute h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.06)_0%,transparent_60%)] blur-[80px]"
+      />
+
       {/* Grid Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.12] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"

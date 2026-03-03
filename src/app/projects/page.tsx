@@ -1,4 +1,3 @@
-import { Suspense } from "react"
 import { Navbar } from "@/components/sections/Navbar"
 import { Projects } from "@/components/sections/Projects"
 

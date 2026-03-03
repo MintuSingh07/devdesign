@@ -40,7 +40,7 @@ export function BackgroundDecor() {
       </div>
 
       {/* Spotlight from top */}
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[1000px] w-[1200px] bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15)_0%,transparent_70%)] opacity-80 pointer-events-none" />
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[1000px] w-[1400px] bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.2)_0%,transparent_70%)] opacity-90 pointer-events-none" />
 
       {/* Mouse Follow Glow */}
       <motion.div
@@ -54,7 +54,7 @@ export function BackgroundDecor() {
           stiffness: 80,
           mass: 1,
         }}
-        className="pointer-events-none absolute h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12)_0%,transparent_60%)] blur-[80px]"
+        className="pointer-events-none absolute h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,transparent_60%)] blur-[80px]"
       />
 
       {/* Grid Pattern */}

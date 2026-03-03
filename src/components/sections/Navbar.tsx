@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Layout, Code } from "lucide-react"
+import { Menu, X, Code } from "lucide-react"
+import Link from "next/link"
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -29,12 +30,12 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-24">
-        <a href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-80">
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-80">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
             <Code className="h-5 w-5 text-white" />
           </div>
           <span>Dev<span className="text-blue-500">Design</span></span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-8 md:flex">

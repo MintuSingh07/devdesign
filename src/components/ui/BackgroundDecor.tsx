@@ -166,18 +166,18 @@ export function BackgroundDecor() {
       </div>
 
       {/* Animated Light Beams */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-60">
         <motion.div
           animate={{
             x: ["-10%", "10%", "-10%"],
-            opacity: [0.1, 0.3, 0.1],
+            opacity: [0.2, 0.5, 0.2],
           }}
           transition={{
             duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[-20%] left-[30%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-blue-500/30 to-transparent shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+          className="absolute top-[-20%] left-[30%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-blue-500/50 to-transparent shadow-[0_0_30px_rgba(59,130,246,0.6)]"
         />
         <motion.div
           animate={{

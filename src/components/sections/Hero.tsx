@@ -21,10 +21,10 @@ export function Hero() {
       {/* Hero Content */}
       <div className="z-10 flex flex-col items-center gap-6 text-center lg:items-start lg:text-left w-full max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-1.5 text-xs font-medium text-blue-400 backdrop-blur-md shadow-lg shadow-blue-500/5"
+          className="group flex items-center gap-2.5 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-2 text-[10px] sm:text-xs font-bold tracking-widest text-blue-400 backdrop-blur-md shadow-lg shadow-blue-500/5 transition-all hover:bg-blue-500/10"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>

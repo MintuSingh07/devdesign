@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Mail, Send, Twitter, Linkedin, Instagram, CheckCircle2 } from "lucide-react"

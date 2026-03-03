@@ -8,7 +8,8 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center px-6 pt-20 lg:flex-row lg:gap-16 lg:px-24 overflow-hidden">
         {/* Hero Ambient Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-blue-600/25 blur-[160px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[1000px] bg-blue-600/30 blur-[180px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/10 blur-[120px] rounded-full pointer-events-none -z-10" />
       
       {/* Content */}
       <div className="z-10 flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">

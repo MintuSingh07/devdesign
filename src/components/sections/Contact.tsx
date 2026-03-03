@@ -4,14 +4,18 @@ import { motion } from "framer-motion"
 import { Mail, Send, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function Contact() {
-  return (
-    <section id="contact" className="w-full px-6 py-24 lg:px-24">
-      <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-24">
-        {/* Left Side: Info */}
-        <div className="flex flex-1 flex-col gap-8 text-center lg:text-left">
-          <div className="flex flex-col gap-4">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Let&apos;s build something <span className="text-blue-500 italic">amazing</span> together.</h2>
-            <p className="max-w-xl text-zinc-400">
+    return (
+      <section id="contact" className="w-full px-6 py-24 lg:px-24 relative overflow-hidden">
+        {/* Section Ambient Glow */}
+        <div className="absolute top-1/2 left-[-100px] -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[160px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-[80%] right-[-100px] w-[1000px] h-[600px] bg-purple-600/5 blur-[160px] rounded-full pointer-events-none -z-10" />
+
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-24 relative z-10">
+          {/* Left Side: Info */}
+          <div className="flex flex-1 flex-col gap-8 text-center lg:text-left">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent leading-[1.1]">Let&apos;s build something <span className="text-blue-500 italic">amazing</span> together.</h2>
+              <p className="max-w-xl text-lg text-zinc-400 font-medium">
               Whether you have a project in mind or just want to say hi, my inbox is always open. 
               I&apos;m always looking for new opportunities and collaborations.
             </p>

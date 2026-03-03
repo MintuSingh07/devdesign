@@ -8,10 +8,14 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center px-6 pt-24 pb-12 lg:flex-row lg:gap-16 lg:px-24 overflow-hidden">
       {/* Background Ambience - Refined */}
-      <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-600/10 blur-[150px] rounded-full sm:block hidden" />
-        <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-purple-600/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-500/10 blur-[140px] rounded-full" />
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-blue-600/[0.15] blur-[180px] rounded-full sm:block hidden" />
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-500/[0.1] blur-[140px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-blue-600/[0.12] blur-[160px] rounded-full" />
+        
+        {/* Mobile Specific Glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-blue-600/20 blur-[100px] rounded-full sm:hidden" />
+        <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-purple-600/10 blur-[80px] rounded-full sm:hidden" />
       </div>
 
       {/* Hero Content */}

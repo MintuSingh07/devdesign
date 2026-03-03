@@ -134,10 +134,43 @@ export function BackgroundDecor() {
       {/* Bottom Glow */}
       <div className="absolute bottom-0 left-0 right-0 h-[300px] bg-gradient-to-t from-blue-600/[0.05] to-transparent blur-[60px]" />
 
-      {/* Light Beams */}
+      {/* Animated Light Beams */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-        <div className="absolute top-[-20%] left-[30%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-blue-500/20 to-transparent shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
-        <div className="absolute top-[-20%] left-[70%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-purple-500/10 to-transparent shadow-[0_0_15px_rgba(168,85,247,0.2)]" />
+        <motion.div
+          animate={{
+            x: ["-10%", "10%", "-10%"],
+            opacity: [0.1, 0.3, 0.1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-[-20%] left-[30%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-blue-500/30 to-transparent shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+        />
+        <motion.div
+          animate={{
+            x: ["10%", "-10%", "10%"],
+            opacity: [0.05, 0.2, 0.05],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-[-20%] left-[70%] h-[140%] w-[1px] -rotate-[35deg] bg-gradient-to-b from-transparent via-purple-500/20 to-transparent shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+        />
+        <motion.div
+          animate={{
+            opacity: [0, 0.1, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-[-20%] left-[50%] h-[140%] w-[2px] -rotate-[35deg] bg-gradient-to-b from-transparent via-white/10 to-transparent blur-[2px]"
+        />
       </div>
 
       {/* Subtle Vignette */}

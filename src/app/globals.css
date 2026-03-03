@@ -125,7 +125,6 @@
   }
 }
 
-/* Hide Next.js error overlay portal */
-nextjs-portal {
+/* nextjs-portal {
   display: none !important;
-}
+} */

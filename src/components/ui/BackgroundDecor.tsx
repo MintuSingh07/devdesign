@@ -92,30 +92,43 @@ export function BackgroundDecor() {
       {/* Large Glowing Orbs */}
       <motion.div
         animate={{
-          x: [0, 60, -40, 0],
-          y: [0, -40, 40, 0],
-          scale: [1, 1.1, 0.9, 1],
+          x: [0, 80, -60, 0],
+          y: [0, -60, 60, 0],
+          scale: [1, 1.2, 0.8, 1],
         }}
         transition={{
-          duration: 25,
+          duration: 35,
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute left-[15%] top-[15%] h-[500px] w-[500px] rounded-full bg-blue-600/[0.08] blur-[120px]"
+        className="absolute left-[5%] top-[5%] h-[700px] w-[700px] rounded-full bg-blue-600/[0.05] blur-[140px]"
       />
       
       <motion.div
         animate={{
-          x: [0, -70, 90, 0],
-          y: [0, 80, -50, 0],
-          scale: [1, 0.85, 1.15, 1],
+          x: [0, -100, 120, 0],
+          y: [0, 100, -80, 0],
+          scale: [1, 0.9, 1.1, 1],
         }}
         transition={{
-          duration: 30,
+          duration: 40,
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute right-[10%] top-[35%] h-[600px] w-[600px] rounded-full bg-purple-600/[0.08] blur-[150px]"
+        className="absolute right-[-5%] top-[30%] h-[800px] w-[800px] rounded-full bg-purple-600/[0.05] blur-[160px]"
+      />
+
+      <motion.div
+        animate={{
+          x: [0, 50, -50, 0],
+          y: [0, 50, -50, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute left-[40%] bottom-[10%] h-[500px] w-[500px] rounded-full bg-blue-400/[0.03] blur-[120px]"
       />
 
       {/* Bottom Glow */}

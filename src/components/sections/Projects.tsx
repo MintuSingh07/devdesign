@@ -132,36 +132,33 @@ function ProjectsContent() {
         </div>
 
         {/* Capsule Switcher */}
-        <div className="relative flex rounded-full bg-zinc-900 p-1 border border-zinc-800 shadow-2xl font-display">
-
-        <motion.div
-          layoutId="active-pill"
-          className="absolute inset-y-1 rounded-full bg-blue-600"
-          animate={{
-            x: category === "web" ? 0 : 160,
-          }}
-          transition={{ type: "spring", stiffness: 350, damping: 30 }}
-          style={{ width: "160px" }}
-        />
-        <button
-          onClick={() => handleCategoryChange("web")}
-          className={`relative z-10 flex h-10 w-40 items-center justify-center gap-2 rounded-full font-medium transition-colors ${
-            category === "web" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
-          }`}
-        >
-          <Globe className="h-4 w-4" />
-          Web Projects
-        </button>
-        <button
-          onClick={() => handleCategoryChange("ui")}
-          className={`relative z-10 flex h-10 w-40 items-center justify-center gap-2 rounded-full font-medium transition-colors ${
-            category === "ui" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
-          }`}
-        >
-          <Palette className="h-4 w-4" />
-          UI/UX Designs
-        </button>
-      </div>
+        <div className="relative flex w-full max-w-[320px] rounded-full bg-zinc-900 p-1 border border-zinc-800 shadow-2xl font-display overflow-hidden">
+          <motion.div
+            className="absolute inset-y-1 w-[calc(50%-4px)] rounded-full bg-blue-600"
+            animate={{
+              x: category === "web" ? 0 : "100%",
+            }}
+            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+          />
+          <button
+            onClick={() => handleCategoryChange("web")}
+            className={`relative z-10 flex h-10 flex-1 items-center justify-center gap-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
+              category === "web" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
+            }`}
+          >
+            <Globe className="h-4 w-4 flex-shrink-0" />
+            <span className="xs:inline">Web Projects</span>
+          </button>
+          <button
+            onClick={() => handleCategoryChange("ui")}
+            className={`relative z-10 flex h-10 flex-1 items-center justify-center gap-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
+              category === "ui" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
+            }`}
+          >
+            <Palette className="h-4 w-4 flex-shrink-0" />
+            <span className="xs:inline">UI/UX Designs</span>
+          </button>
+        </div>
 
       {/* Projects Grid */}
       <motion.div 

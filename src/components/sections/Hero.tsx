@@ -29,56 +29,55 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-3xl bg-gradient-to-b from-white to-white/60 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl"
+          className="max-w-4xl bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-6xl font-black tracking-tighter text-transparent sm:text-8xl leading-[1.1]"
         >
-          UI/UX Designer & <span className="text-blue-500">Website Developer</span>
+          Designing <span className="text-blue-500">Aesthetics</span>,<br className="hidden sm:block" /> Developing <span className="text-blue-500">Impact</span>.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl text-lg text-zinc-400"
+          className="max-w-xl text-lg text-zinc-400 font-medium leading-relaxed"
         >
-          Crafting high-performance websites and stunning user interfaces with 2+ years of professional experience. 
-          Bridging the gap between aesthetics and functionality.
+          Bridging the gap between pixel-perfect design and high-performance code. 
+          2 years of delivering premium digital experiences.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-4 lg:justify-start"
+          className="flex flex-wrap items-center justify-center gap-6 lg:justify-start mt-4"
         >
-          <button className="group flex h-12 items-center gap-2 rounded-full bg-blue-600 px-8 font-medium text-white transition-all hover:bg-blue-700 active:scale-95">
-            View Projects
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <button className="group relative flex h-14 items-center gap-2 rounded-full bg-white px-8 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-white/5 overflow-hidden">
+            <span className="relative z-10">Get in Touch</span>
+            <div className="absolute inset-0 bg-blue-50 opacity-0 transition-opacity group-hover:opacity-100" />
+            <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
           
-            <div className="flex items-center gap-6 border-l border-zinc-800 pl-6 text-zinc-500">
-              <motion.div 
-                whileHover={{ scale: 1.2, color: "#3b82f6" }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="flex items-center gap-2 cursor-pointer" title="Developer"
-              >
-                <Code className="h-5 w-5" />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.2, color: "#a855f7" }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="flex items-center gap-2 cursor-pointer" title="Designer"
-              >
-                <Layout className="h-5 w-5" />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.2, color: "#22c55e" }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="flex items-center gap-2 cursor-pointer" title="Terminal"
-              >
-                <Terminal className="h-5 w-5" />
-              </motion.div>
-            </div>
-
+          <div className="flex items-center gap-8 px-8 py-3 rounded-full border border-white/5 bg-white/5 backdrop-blur-sm">
+            <motion.div 
+              whileHover={{ y: -4, color: "#3b82f6" }}
+              className="flex items-center gap-2 cursor-pointer transition-colors" title="Developer"
+            >
+              <Code className="h-5 w-5" />
+            </motion.div>
+            <div className="h-4 w-px bg-zinc-800" />
+            <motion.div 
+              whileHover={{ y: -4, color: "#a855f7" }}
+              className="flex items-center gap-2 cursor-pointer transition-colors" title="Designer"
+            >
+              <Layout className="h-5 w-5" />
+            </motion.div>
+            <div className="h-4 w-px bg-zinc-800" />
+            <motion.div 
+              whileHover={{ y: -4, color: "#22c55e" }}
+              className="flex items-center gap-2 cursor-pointer transition-colors" title="Terminal"
+            >
+              <Terminal className="h-5 w-5" />
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 

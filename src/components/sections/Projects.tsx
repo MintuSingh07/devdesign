@@ -100,6 +100,8 @@ const projects: Project[] = [
 
 function ProjectsContent() {
   const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
   const [category, setCategory] = useState<ProjectType>("web")
 
   useEffect(() => {
@@ -107,6 +109,13 @@ function ProjectsContent() {
     if (c === "ui") setCategory("ui")
     else if (c === "web") setCategory("web")
   }, [searchParams])
+
+  const handleCategoryChange = (newCategory: ProjectType) => {
+    setCategory(newCategory)
+    const params = new URLSearchParams(searchParams.toString())
+    params.set("c", newCategory)
+    router.push(`${pathname}?${params.toString()}`, { scroll: false })
+  }
 
   const filteredProjects = projects.filter((p) => p.type === category)
 
@@ -131,7 +140,7 @@ function ProjectsContent() {
           style={{ width: "160px" }}
         />
         <button
-          onClick={() => setCategory("web")}
+          onClick={() => handleCategoryChange("web")}
           className={`relative z-10 flex h-10 w-40 items-center justify-center gap-2 rounded-full font-medium transition-colors ${
             category === "web" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
           }`}
@@ -140,7 +149,7 @@ function ProjectsContent() {
           Web Projects
         </button>
         <button
-          onClick={() => setCategory("ui")}
+          onClick={() => handleCategoryChange("ui")}
           className={`relative z-10 flex h-10 w-40 items-center justify-center gap-2 rounded-full font-medium transition-colors ${
             category === "ui" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
           }`}

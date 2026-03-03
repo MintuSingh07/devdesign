@@ -119,10 +119,13 @@ function ProjectsContent() {
 
   const filteredProjects = projects.filter((p) => p.type === category)
 
-  return (
-    <div className="flex flex-col items-center gap-12">
-      <div className="flex flex-col items-center gap-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Featured Works</h2>
+    return (
+      <div className="flex flex-col items-center gap-12 relative">
+        {/* Section Ambient Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none -z-10" />
+
+        <div className="flex flex-col items-center gap-4 text-center">
+          <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">Featured Works</h2>
         <p className="max-w-xl text-zinc-400">
           A curated selection of my professional projects across web development and UI/UX design.
         </p>

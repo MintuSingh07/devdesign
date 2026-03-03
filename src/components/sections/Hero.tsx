@@ -33,7 +33,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="max-w-3xl bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-[2.75rem] leading-[1.05] font-black tracking-tight text-transparent sm:text-[5.5rem] lg:text-[6.5rem] sm:leading-[0.95] font-display"
+          className="max-w-3xl bg-gradient-to-br from-white via-white to-white/40 bg-clip-text text-[2.25rem] leading-[1.1] font-black tracking-tight text-transparent sm:text-[4.5rem] lg:text-[5rem] sm:leading-[1] font-display"
         >
           Designing <span className="text-blue-500 relative inline-block">
             Aesthetics
@@ -41,7 +41,7 @@ export function Hero() {
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ delay: 1, duration: 1 }}
-              className="absolute -bottom-2 left-0 h-1 bg-blue-500/30 rounded-full"
+              className="absolute -bottom-1 left-0 h-1 bg-blue-500/30 rounded-full"
             />
           </span>,
           <br className="hidden lg:block" /> Developing <span className="text-blue-500 relative inline-block">
@@ -50,7 +50,7 @@ export function Hero() {
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ delay: 1.2, duration: 1 }}
-              className="absolute -bottom-2 left-0 h-1 bg-blue-500/30 rounded-full"
+              className="absolute -bottom-1 left-0 h-1 bg-blue-500/30 rounded-full"
             />
           </span>.
         </motion.h1>
@@ -59,7 +59,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-xl text-lg sm:text-xl text-zinc-400 font-medium leading-relaxed font-sans px-2 sm:px-0 mt-2"
+          className="max-w-xl text-base sm:text-lg text-zinc-400 font-medium leading-relaxed font-sans px-2 sm:px-0"
         >
           Bridging the gap between pixel-perfect design and high-performance code. 
           <span className="hidden sm:inline"> I craft premium digital experiences for forward-thinking brands.</span>

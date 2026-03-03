@@ -67,37 +67,49 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute left-0 top-full w-full bg-black border-b border-zinc-800 px-6 py-8 md:hidden shadow-2xl"
-          >
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-zinc-400 transition-colors hover:text-white"
+        {/* Mobile Nav */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, scale: 0.95 }}
+              animate={{ opacity: 1, height: "auto", scale: 1 }}
+              exit={{ opacity: 0, height: 0, scale: 0.95 }}
+              className="absolute left-0 top-[calc(100%+1rem)] w-full overflow-hidden rounded-[2.5rem] bg-zinc-900/90 border border-white/10 p-2 backdrop-blur-2xl md:hidden shadow-[0_20px_80px_rgba(0,0,0,0.7)]"
+            >
+              <div className="flex flex-col p-4 gap-1">
+                {navLinks.map((link, i) => (
+                  <motion.a
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-center gap-4 px-6 py-5 rounded-2xl text-xl font-bold text-zinc-400 transition-all hover:text-white hover:bg-white/5 active:bg-white/10"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-blue-500 opacity-0 transition-all group-hover:opacity-100 group-hover:scale-125" />
+                    {link.name}
+                  </motion.a>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="mt-4 p-2"
                 >
-                  {link.name}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="flex h-12 items-center justify-center rounded-xl bg-white px-6 text-base font-bold text-black transition-all hover:bg-zinc-200"
-              >
-                Hire Me
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="flex h-16 items-center justify-center rounded-[1.5rem] bg-blue-600 px-6 text-lg font-black text-white transition-all hover:bg-blue-500 active:scale-[0.98] shadow-xl shadow-blue-600/20"
+                  >
+                    Hire Me
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
     </nav>
   )
 }

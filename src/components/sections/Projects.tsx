@@ -191,18 +191,18 @@ function ProjectsContent() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
                 
-                <div className="flex flex-1 flex-col px-8 pb-8 pt-2">
-                  <div className="mb-4 flex flex-wrap gap-2">
+                <div className="flex flex-1 flex-col px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
+                  <div className="mb-3 sm:mb-4 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span key={tag} className="text-[10px] uppercase tracking-widest text-blue-400 font-semibold bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/10">
                         {tag}
                       </span>
                     ))}
                   </div>
-                    <h3 className="mb-3 text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors font-display">
+                    <h3 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors font-display">
                       {project.title}
                     </h3>
-                    <p className="mb-8 text-sm leading-relaxed text-zinc-400/80 font-sans">
+                    <p className="mb-6 sm:mb-8 text-sm leading-relaxed text-zinc-400/80 font-sans">
                       {project.description}
                     </p>
 

@@ -132,7 +132,33 @@ export function BackgroundDecor() {
       />
 
       {/* Bottom Glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-[300px] bg-gradient-to-t from-blue-600/[0.05] to-transparent blur-[60px]" />
+      <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-[radial-gradient(circle_at_bottom,rgba(59,130,246,0.08)_0%,transparent_70%)] blur-[40px] pointer-events-none" />
+
+      {/* Floating Outlines */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+        <motion.div
+          animate={{
+            rotate: 360,
+            y: [0, -20, 0],
+          }}
+          transition={{
+            rotate: { duration: 60, repeat: Infinity, ease: "linear" },
+            y: { duration: 10, repeat: Infinity, ease: "easeInOut" },
+          }}
+          className="absolute left-[10%] top-[20%] h-64 w-64 border border-blue-500/10 rounded-full"
+        />
+        <motion.div
+          animate={{
+            rotate: -360,
+            y: [0, 30, 0],
+          }}
+          transition={{
+            rotate: { duration: 80, repeat: Infinity, ease: "linear" },
+            y: { duration: 15, repeat: Infinity, ease: "easeInOut" },
+          }}
+          className="absolute right-[15%] bottom-[20%] h-96 w-96 border border-purple-500/10 rounded-lg"
+        />
+      </div>
 
       {/* Animated Light Beams */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">

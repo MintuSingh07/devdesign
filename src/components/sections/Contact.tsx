@@ -1,9 +1,23 @@
-"use client"
-
-import { motion } from "framer-motion"
-import { Mail, Send, Twitter, Linkedin, Instagram } from "lucide-react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Mail, Send, Twitter, Linkedin, Instagram, CheckCircle2 } from "lucide-react"
 
 export function Contact() {
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSuccess, setIsSuccess] = useState(false)
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+        
+        // Simulate API call
+        setTimeout(() => {
+            setIsSubmitting(false)
+            setIsSuccess(true)
+            setTimeout(() => setIsSuccess(false), 5000)
+        }, 1500)
+    }
+
     return (
       <section id="contact" className="w-full px-6 py-24 lg:px-24 relative overflow-hidden">
         {/* Section Ambient Glow */}
@@ -52,41 +66,71 @@ export function Contact() {
                 {/* Form Ambient Light */}
                 <div className="absolute -right-20 -top-20 h-64 w-64 bg-blue-600/10 blur-[80px] rounded-full pointer-events-none" />
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <div className="flex flex-col gap-3 font-sans">
-                    <label className="ml-1 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">Name</label>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className="w-full rounded-2xl border border-white/5 bg-white/5 px-6 py-5 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-3 font-sans">
-                    <label className="ml-1 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">Email</label>
-                    <input
-                      type="email"
-                      placeholder="john@example.com"
-                      className="w-full rounded-2xl border border-white/5 bg-white/5 px-6 py-5 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-3 font-sans">
-                  <label className="ml-1 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">Message</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell me about your project..."
-                    className="w-full resize-none rounded-2xl border border-white/5 bg-white/5 px-6 py-5 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
-                  />
-                </div>
-                <button className="group relative flex h-16 items-center justify-center gap-3 rounded-2xl bg-blue-600 font-bold text-white transition-all hover:bg-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 active:scale-[0.98] overflow-hidden font-display">
-                  <span className="relative z-10">Send Message</span>
-                  <Send className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                </button>
+                <AnimatePresence mode="wait">
+                  {isSuccess ? (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.1 }}
+                      className="flex flex-col items-center justify-center py-12 text-center"
+                    >
+                      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-blue-500/20 text-blue-400">
+                        <CheckCircle2 className="h-10 w-10" />
+                      </div>
+                      <h3 className="mb-2 text-2xl font-bold text-white font-display">Message Sent!</h3>
+                      <p className="text-zinc-400 font-sans">Thanks for reaching out. I&apos;ll get back to you soon.</p>
+                    </motion.div>
+                  ) : (
+                    <form key="form" onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-8">
+                      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div className="flex flex-col gap-3 font-sans">
+                          <label className="ml-1 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">Name</label>
+                          <input
+                            required
+                            type="text"
+                            placeholder="John Doe"
+                            className="w-full rounded-2xl border border-white/5 bg-white/5 px-6 py-5 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-3 font-sans">
+                          <label className="ml-1 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">Email</label>
+                          <input
+                            required
+                            type="email"
+                            placeholder="john@example.com"
+                            className="w-full rounded-2xl border border-white/5 bg-white/5 px-6 py-5 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-3 font-sans">
+                        <label className="ml-1 text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">Message</label>
+                        <textarea
+                          required
+                          rows={4}
+                          placeholder="Tell me about your project..."
+                          className="w-full resize-none rounded-2xl border border-white/5 bg-white/5 px-6 py-5 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
+                        />
+                      </div>
+                      <button 
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="group relative flex h-16 items-center justify-center gap-3 rounded-2xl bg-blue-600 font-bold text-white transition-all hover:bg-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden font-display"
+                      >
+                        <span className="relative z-10">
+                          {isSubmitting ? "Sending..." : "Send Message"}
+                        </span>
+                        {!isSubmitting && <Send className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                      </button>
+                    </form>
+                  )}
+                </AnimatePresence>
               </motion.div>
             </div>
 
-      </div>
-    </section>
-  )
+        </div>
+      </section>
+    )
 }
+

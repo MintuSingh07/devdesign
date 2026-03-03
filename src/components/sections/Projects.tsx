@@ -164,56 +164,72 @@ function ProjectsContent() {
         layout
         className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2"
       >
-        <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-zinc-700 hover:shadow-2xl hover:shadow-blue-500/10"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <div className="mb-2 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="text-[10px] uppercase tracking-wider text-blue-400 font-bold bg-blue-400/10 px-2 py-0.5 rounded">
-                      {tag}
-                    </span>
-                  ))}
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-white/5 bg-zinc-900/40 backdrop-blur-md transition-all hover:border-blue-500/20 hover:shadow-[0_0_40px_-15px_rgba(59,130,246,0.3)]"
+              >
+                {/* Border Beam Effect (Hover) */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  <div className="absolute inset-[-2px] rounded-[2rem] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent blur-sm animate-pulse" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="mb-6 text-sm leading-relaxed text-zinc-400">
-                  {project.description}
-                </p>
-                <div className="mt-auto flex items-center gap-4">
-                  {project.links.demo && (
-                    <a href={project.links.demo} className="flex items-center gap-1.5 text-sm font-medium text-white hover:text-blue-400 transition-colors">
-                      Live Demo <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                  )}
-                  {project.links.github && (
-                    <a href={project.links.github} className="flex items-center gap-1.5 text-sm font-medium text-white hover:text-blue-400 transition-colors">
-                      GitHub <Github className="h-3.5 w-3.5" />
-                    </a>
-                  )}
+
+                <div className="relative aspect-[16/10] overflow-hidden m-4 rounded-2xl">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+                
+                <div className="flex flex-1 flex-col px-8 pb-8 pt-2">
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="text-[10px] uppercase tracking-widest text-blue-400 font-semibold bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/10">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="mb-3 text-2xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="mb-8 text-sm leading-relaxed text-zinc-400/80">
+                    {project.description}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between">
+                    <div className="flex items-center gap-6">
+                      {project.links.demo && (
+                        <a href={project.links.demo} className="group/link flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-white transition-colors">
+                          <span className="relative">
+                            Live Preview
+                            <span className="absolute -bottom-1 left-0 h-px w-0 bg-blue-500 transition-all duration-300 group-hover/link:w-full" />
+                          </span>
+                          <ExternalLink className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                        </a>
+                      )}
+                      {project.links.github && (
+                        <a href={project.links.github} className="group/link flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-white transition-colors">
+                          <span className="relative">
+                            Source Code
+                            <span className="absolute -bottom-1 left-0 h-px w-0 bg-zinc-500 transition-all duration-300 group-hover/link:w-full" />
+                          </span>
+                          <Github className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
       </motion.div>
     </div>
   )

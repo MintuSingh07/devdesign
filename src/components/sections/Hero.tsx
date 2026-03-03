@@ -69,19 +69,19 @@ export function Hero() {
           <span className="hidden sm:inline"> I craft premium digital experiences for forward-thinking brands.</span>
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 lg:justify-start mt-8 w-full sm:w-auto"
-        >
-          <button className="group relative flex h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-white px-10 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)] overflow-hidden font-display">
-            <span className="relative z-10">Get in Touch</span>
-            <div className="absolute inset-0 bg-blue-50 opacity-0 transition-opacity group-hover:opacity-100" />
-            <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </button>
-          
-          <div className="flex w-full sm:w-auto items-center justify-center gap-4 px-6 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg shadow-black/10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 lg:justify-start mt-8 w-full sm:w-auto"
+          >
+            <a href="#contact" className="group relative flex h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-white px-10 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)] overflow-hidden font-display">
+              <span className="relative z-10">Get in Touch</span>
+              <div className="absolute inset-0 bg-blue-50 opacity-0 transition-opacity group-hover:opacity-100" />
+              <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+            
+            <div className="flex w-full sm:w-auto items-center justify-center gap-4 px-6 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg shadow-black/10">
             <motion.div 
               whileHover={{ y: -3, color: "#3b82f6" }}
               className="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-all text-zinc-400" title="Developer"

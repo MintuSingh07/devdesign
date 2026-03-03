@@ -38,46 +38,50 @@ export function Contact() {
           </div>
         </div>
 
-        {/* Right Side: Form */}
-        <div className="flex-1">
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6 rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur-sm"
-          >
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-zinc-500">Name</label>
-                <input
-                  type="text"
-                  placeholder="John Doe"
-                  className="w-full rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-600"
+          {/* Right Side: Form */}
+          <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative flex flex-col gap-8 rounded-[2.5rem] border border-white/5 bg-zinc-900/40 p-10 backdrop-blur-md shadow-2xl"
+            >
+              {/* Form Ambient Light */}
+              <div className="absolute -right-20 -top-20 h-64 w-64 bg-blue-600/10 blur-[80px] rounded-full pointer-events-none" />
+
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <div className="flex flex-col gap-3">
+                  <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Name</label>
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    className="w-full rounded-2xl border border-white/5 bg-white/5 px-5 py-4 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Email Address</label>
+                  <input
+                    type="email"
+                    placeholder="john@example.com"
+                    className="w-full rounded-2xl border border-white/5 bg-white/5 px-5 py-4 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">How can I help?</label>
+                <textarea
+                  rows={5}
+                  placeholder="Tell me about your project, goals, and timeline..."
+                  className="w-full resize-none rounded-2xl border border-white/5 bg-white/5 px-5 py-4 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-zinc-500">Email</label>
-                <input
-                  type="email"
-                  placeholder="john@example.com"
-                  className="w-full rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-600"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-zinc-500">Message</label>
-              <textarea
-                rows={4}
-                placeholder="Tell me about your project..."
-                className="w-full resize-none rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-600"
-              />
-            </div>
-            <button className="flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 font-bold text-black transition-all hover:bg-zinc-200 active:scale-95">
-              Send Message
-              <Send className="h-4 w-4" />
-            </button>
-          </motion.div>
-        </div>
+              <button className="group relative flex h-14 items-center justify-center gap-3 rounded-2xl bg-blue-600 font-bold text-white transition-all hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/20 active:scale-[0.98] overflow-hidden">
+                <span className="relative z-10">Send Message</span>
+                <Send className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              </button>
+            </motion.div>
+          </div>
       </div>
     </section>
   )

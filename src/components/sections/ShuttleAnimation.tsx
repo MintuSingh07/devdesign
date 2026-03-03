@@ -4,6 +4,14 @@ import { motion } from "framer-motion"
 import { Rocket } from "lucide-react"
 
 export function ShuttleAnimation() {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) return <div className="h-64 w-64" />
+
   return (
     <div className="relative h-64 w-64 flex items-center justify-center">
       {/* Background Glow */}

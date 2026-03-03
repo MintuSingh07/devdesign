@@ -137,11 +137,12 @@ function ProjectsContent() {
                 transition={{ duration: 0.4 }}
                 className="group relative flex flex-col overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-zinc-700"
               >
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">

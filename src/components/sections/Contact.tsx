@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, MessageSquare, Send, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Mail, Send, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function Contact() {
   return (
@@ -10,10 +10,10 @@ export function Contact() {
         {/* Left Side: Info */}
         <div className="flex flex-1 flex-col gap-8 text-center lg:text-left">
           <div className="flex flex-col gap-4">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Let's build something <span className="text-blue-500 italic">amazing</span> together.</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Let&apos;s build something <span className="text-blue-500 italic">amazing</span> together.</h2>
             <p className="max-w-xl text-zinc-400">
               Whether you have a project in mind or just want to say hi, my inbox is always open. 
-              I'm always looking for new opportunities and collaborations.
+              I&apos;m always looking for new opportunities and collaborations.
             </p>
           </div>
 

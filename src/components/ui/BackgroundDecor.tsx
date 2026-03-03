@@ -6,8 +6,15 @@ import { useEffect, useState } from "react"
 export function BackgroundDecor() {
   const [isMounted, setIsMounted] = useState(false)
 
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
   useEffect(() => {
     setIsMounted(true)
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY })
+    }
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [])
 
   if (!isMounted) return null

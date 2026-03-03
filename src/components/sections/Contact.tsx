@@ -14,14 +14,15 @@ export function Contact() {
           {/* Left Side: Info */}
           <div className="flex flex-1 flex-col gap-8 text-center lg:text-left">
             <div className="flex flex-col gap-4">
-              <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent leading-[1.1]">Let&apos;s build something <span className="text-blue-500 italic">amazing</span> together.</h2>
-              <p className="max-w-xl text-lg text-zinc-400 font-medium">
-              Whether you have a project in mind or just want to say hi, my inbox is always open. 
-              I&apos;m always looking for new opportunities and collaborations.
-            </p>
-          </div>
+                <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent leading-[1.1] font-display">Let&apos;s build something <span className="text-blue-500 italic">amazing</span> together.</h2>
+                <p className="max-w-xl text-lg text-zinc-400 font-medium font-sans">
+                Whether you have a project in mind or just want to say hi, my inbox is always open. 
+                I&apos;m always looking for new opportunities and collaborations.
+              </p>
+            </div>
 
-          <div className="flex flex-col gap-6 text-zinc-400">
+            <div className="flex flex-col gap-6 text-zinc-400 font-sans">
+
             <a href="mailto:hello@example.com" className="group flex items-center justify-center gap-3 transition-colors hover:text-white lg:justify-start">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 transition-colors group-hover:bg-blue-600 group-hover:border-blue-500">
                 <Mail className="h-5 w-5" />

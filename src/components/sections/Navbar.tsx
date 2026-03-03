@@ -25,32 +25,33 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-black/60 py-4 backdrop-blur-xl border-b border-zinc-800" : "bg-transparent py-6"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl transition-all duration-500 rounded-full border border-white/5 ${
+        scrolled ? "bg-black/60 py-3 backdrop-blur-2xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.8)]" : "bg-transparent py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-24">
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white transition-opacity hover:opacity-80">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
-            <Code className="h-5 w-5 text-white" />
+      <div className="mx-auto flex items-center justify-between px-6 lg:px-8">
+        <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tighter text-white transition-opacity hover:opacity-80">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 shadow-lg shadow-blue-500/20">
+            <Code className="h-4 w-4 text-white" />
           </div>
           <span>Dev<span className="text-blue-500">Design</span></span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+              className="px-4 py-2 text-xs font-semibold tracking-wide text-zinc-400 transition-all hover:text-white hover:bg-white/5 rounded-full"
             >
               {link.name}
             </a>
           ))}
+          <div className="ml-2 h-4 w-px bg-zinc-800" />
           <a
             href="#contact"
-            className="flex h-10 items-center justify-center rounded-full bg-white px-6 text-sm font-bold text-black transition-all hover:bg-zinc-200 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            className="ml-2 flex h-9 items-center justify-center rounded-full bg-blue-600 px-6 text-xs font-bold text-white transition-all hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 shadow-[0_0_20px_rgba(59,130,246,0.1)]"
           >
             Hire Me
           </a>

@@ -14,7 +14,7 @@ export function ShuttleAnimation() {
   if (!isMounted) return <div className="h-64 w-64" />
 
   return (
-    <div className="relative h-48 w-48 sm:h-64 sm:w-64 flex items-center justify-center">
+    <div className="relative h-64 w-64 sm:h-72 sm:w-72 flex items-center justify-center">
       {/* Background Glow */}
       <motion.div
         animate={{
@@ -26,7 +26,7 @@ export function ShuttleAnimation() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute h-32 w-32 sm:h-48 sm:w-48 rounded-full bg-blue-500/20 blur-2xl sm:blur-3xl"
+        className="absolute h-48 w-48 sm:h-56 sm:w-56 rounded-full bg-blue-500/20 blur-2xl sm:blur-3xl"
       />
       
       {/* Stars/Particles */}
@@ -71,7 +71,7 @@ export function ShuttleAnimation() {
         className="relative z-10"
       >
         <div className="relative group">
-          <Rocket className="h-20 w-20 sm:h-28 sm:w-28 text-blue-400 drop-shadow-[0_0_20px_rgba(96,165,250,0.6)] transition-all group-hover:text-blue-300 group-hover:drop-shadow-[0_0_30px_rgba(96,165,250,0.8)]" />
+          <Rocket className="h-24 w-24 sm:h-32 sm:w-32 text-blue-400 drop-shadow-[0_0_20px_rgba(96,165,250,0.6)] transition-all group-hover:text-blue-300 group-hover:drop-shadow-[0_0_30px_rgba(96,165,250,0.8)]" />
           
           {/* Main Thruster Flame */}
           <motion.div
@@ -84,7 +84,7 @@ export function ShuttleAnimation() {
               duration: 0.15,
               repeat: Infinity,
             }}
-            className="absolute -bottom-4 sm:-bottom-6 left-1/2 -translate-x-1/2 w-3 sm:w-5 bg-gradient-to-b from-blue-400 via-blue-600 to-transparent rounded-full blur-[2px] sm:blur-[3px]"
+            className="absolute -bottom-5 sm:-bottom-7 left-1/2 -translate-x-1/2 w-4 sm:w-6 bg-gradient-to-b from-blue-400 via-blue-600 to-transparent rounded-full blur-[2px] sm:blur-[3px]"
           />
 
           {/* Side Thrusters */}
@@ -98,7 +98,7 @@ export function ShuttleAnimation() {
               repeat: Infinity,
               delay: 0.05,
             }}
-            className="absolute -bottom-1 sm:-bottom-2 left-3 sm:left-4 w-1.5 sm:w-2 bg-blue-300/40 rounded-full blur-[1px] sm:blur-[2px]"
+            className="absolute -bottom-1 sm:-bottom-2 left-4 sm:left-5 w-2 sm:w-2.5 bg-blue-300/40 rounded-full blur-[1px] sm:blur-[2px]"
           />
           <motion.div
             animate={{
@@ -110,7 +110,7 @@ export function ShuttleAnimation() {
               repeat: Infinity,
               delay: 0.1,
             }}
-            className="absolute -bottom-1 sm:-bottom-2 right-3 sm:right-4 w-1.5 sm:w-2 bg-blue-300/40 rounded-full blur-[1px] sm:blur-[2px]"
+            className="absolute -bottom-1 sm:-bottom-2 right-4 sm:right-5 w-2 sm:w-2.5 bg-blue-300/40 rounded-full blur-[1px] sm:blur-[2px]"
           />
         </div>
       </motion.div>

@@ -52,17 +52,30 @@ export function Hero() {
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
           
-          <div className="flex items-center gap-6 border-l border-zinc-800 pl-6 text-zinc-500">
-            <div className="flex items-center gap-2" title="Developer">
-              <Code className="h-5 w-5" />
+            <div className="flex items-center gap-6 border-l border-zinc-800 pl-6 text-zinc-500">
+              <motion.div 
+                whileHover={{ scale: 1.2, color: "#3b82f6" }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="flex items-center gap-2 cursor-pointer" title="Developer"
+              >
+                <Code className="h-5 w-5" />
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.2, color: "#a855f7" }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="flex items-center gap-2 cursor-pointer" title="Designer"
+              >
+                <Layout className="h-5 w-5" />
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.2, color: "#22c55e" }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="flex items-center gap-2 cursor-pointer" title="Terminal"
+              >
+                <Terminal className="h-5 w-5" />
+              </motion.div>
             </div>
-            <div className="flex items-center gap-2" title="Designer">
-              <Layout className="h-5 w-5" />
-            </div>
-            <div className="flex items-center gap-2" title="Terminal">
-              <Terminal className="h-5 w-5" />
-            </div>
-          </div>
+
         </motion.div>
       </div>
 

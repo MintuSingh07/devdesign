@@ -5,8 +5,8 @@ import { Contact } from "@/components/sections/Contact";
 import { BackgroundDecor } from "@/components/ui/BackgroundDecor";
 
 export default function Home() {
-  return (
-    <div className="relative min-h-screen w-full bg-[#030303] text-zinc-50 selection:bg-blue-500/30 selection:text-blue-200">
+    return (
+      <div className="relative min-h-screen w-full bg-[#020204] text-zinc-50 selection:bg-blue-500/30 selection:text-blue-200">
       <BackgroundDecor />
       
       <Navbar />

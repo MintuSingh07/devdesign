@@ -26,32 +26,33 @@ export function Hero() {
           Available for new projects
         </motion.div>
 
-          <motion.h1
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="max-w-4xl bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-5xl font-black tracking-tighter text-transparent sm:text-7xl leading-[1.1] font-display"
+            >
+              Designing <span className="text-blue-500">Aesthetics</span>,<br className="hidden sm:block" /> Developing <span className="text-blue-500">Impact</span>.
+            </motion.h1>
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="max-w-4xl bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-5xl font-black tracking-tighter text-transparent sm:text-7xl leading-[1.1]"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-xl text-lg text-zinc-400 font-medium leading-relaxed font-sans"
           >
-            Designing <span className="text-blue-500">Aesthetics</span>,<br className="hidden sm:block" /> Developing <span className="text-blue-500">Impact</span>.
-          </motion.h1>
+            Bridging the gap between pixel-perfect design and high-performance code. 
+            2 years of delivering premium digital experiences.
+          </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-xl text-lg text-zinc-400 font-medium leading-relaxed"
-        >
-          Bridging the gap between pixel-perfect design and high-performance code. 
-          2 years of delivering premium digital experiences.
-        </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center gap-6 lg:justify-start mt-4"
+          >
+            <button className="group relative flex h-14 items-center gap-2 rounded-full bg-white px-8 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-white/5 overflow-hidden font-display">
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-6 lg:justify-start mt-4"
-        >
-          <button className="group relative flex h-14 items-center gap-2 rounded-full bg-white px-8 font-bold text-black transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-white/5 overflow-hidden">
             <span className="relative z-10">Get in Touch</span>
             <div className="absolute inset-0 bg-blue-50 opacity-0 transition-opacity group-hover:opacity-100" />
             <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />

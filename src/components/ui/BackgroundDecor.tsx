@@ -134,6 +134,11 @@ export function BackgroundDecor() {
       {/* Bottom Glow */}
       <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-[radial-gradient(circle_at_bottom,rgba(59,130,246,0.08)_0%,transparent_70%)] blur-[40px] pointer-events-none" />
 
+      {/* Section Specific Glows */}
+      <div className="absolute top-[20%] left-0 h-[500px] w-[500px] bg-blue-500/[0.03] blur-[100px] pointer-events-none" />
+      <div className="absolute top-[50%] right-0 h-[600px] w-[600px] bg-purple-500/[0.03] blur-[120px] pointer-events-none" />
+      <div className="absolute top-[80%] left-[20%] h-[500px] w-[500px] bg-blue-600/[0.02] blur-[100px] pointer-events-none" />
+
       {/* Floating Outlines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
         <motion.div

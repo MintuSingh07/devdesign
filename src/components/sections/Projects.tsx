@@ -124,15 +124,16 @@ function ProjectsContent() {
         {/* Section Ambient Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none -z-10" />
 
-        <div className="flex flex-col items-center gap-4 text-center">
-          <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">Featured Works</h2>
-        <p className="max-w-xl text-zinc-400">
-          A curated selection of my professional projects across web development and UI/UX design.
-        </p>
-      </div>
+          <div className="flex flex-col items-center gap-4 text-center">
+            <h2 className="text-4xl font-black tracking-tight text-white sm:text-6xl bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent font-display">Featured Works</h2>
+          <p className="max-w-xl text-zinc-400 font-sans">
+            A curated selection of my professional projects across web development and UI/UX design.
+          </p>
+        </div>
 
-      {/* Capsule Switcher */}
-      <div className="relative flex rounded-full bg-zinc-900 p-1 border border-zinc-800 shadow-2xl">
+        {/* Capsule Switcher */}
+        <div className="relative flex rounded-full bg-zinc-900 p-1 border border-zinc-800 shadow-2xl font-display">
+
         <motion.div
           layoutId="active-pill"
           className="absolute inset-y-1 rounded-full bg-blue-600"

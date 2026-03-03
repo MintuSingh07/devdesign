@@ -55,7 +55,7 @@ export function Contact() {
               <div className="absolute -right-20 -top-20 h-64 w-64 bg-blue-600/10 blur-[80px] rounded-full pointer-events-none" />
 
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 font-sans">
                   <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Name</label>
                   <input
                     type="text"
@@ -63,7 +63,7 @@ export function Contact() {
                     className="w-full rounded-2xl border border-white/5 bg-white/5 px-5 py-4 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
                   />
                 </div>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 font-sans">
                   <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Email Address</label>
                   <input
                     type="email"
@@ -72,7 +72,7 @@ export function Contact() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 font-sans">
                 <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">How can I help?</label>
                 <textarea
                   rows={5}
@@ -80,7 +80,7 @@ export function Contact() {
                   className="w-full resize-none rounded-2xl border border-white/5 bg-white/5 px-5 py-4 text-sm text-white placeholder-zinc-600 outline-none transition-all focus:border-blue-500/50 focus:bg-white/10"
                 />
               </div>
-              <button className="group relative flex h-14 items-center justify-center gap-3 rounded-2xl bg-blue-600 font-bold text-white transition-all hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/20 active:scale-[0.98] overflow-hidden">
+              <button className="group relative flex h-14 items-center justify-center gap-3 rounded-2xl bg-blue-600 font-bold text-white transition-all hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/20 active:scale-[0.98] overflow-hidden font-display">
                 <span className="relative z-10">Send Message</span>
                 <Send className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />

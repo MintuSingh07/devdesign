@@ -6,12 +6,7 @@ import { Terminal, Code, Layout, ArrowRight } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden px-6 pt-20 lg:flex-row lg:gap-16 lg:px-24">
-      {/* Background Decor */}
-      <div className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden blur-[120px]">
-        <div className="h-[400px] w-[600px] rounded-full bg-blue-500/10" />
-      </div>
-
+    <section className="relative flex min-h-[90vh] w-full flex-col items-center justify-center px-6 pt-20 lg:flex-row lg:gap-16 lg:px-24">
       {/* Content */}
       <div className="z-10 flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
         <motion.div

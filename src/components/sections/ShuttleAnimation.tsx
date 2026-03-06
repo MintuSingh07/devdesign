@@ -15,7 +15,7 @@ export function ShuttleAnimation() {
 
   return (
     <div className="relative h-64 w-64 sm:h-72 sm:w-72 flex items-center justify-center">
-      {/* Background Glow */}
+      {/* Background Glow - Replaced blur with radial gradient */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -26,11 +26,11 @@ export function ShuttleAnimation() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute h-48 w-48 sm:h-56 sm:w-56 rounded-full bg-blue-500/20 blur-2xl sm:blur-3xl"
+        className="absolute h-48 w-48 sm:h-56 sm:w-56 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,transparent_70%)] will-change-transform"
       />
-      
-      {/* Stars/Particles */}
-      {[...Array(6)].map((_, i) => (
+
+      {/* Stars/Particles - Reduced count */}
+      {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
           animate={{
@@ -65,52 +65,28 @@ export function ShuttleAnimation() {
           rotate: [0, 8, -8, 0],
         }}
         transition={{
-          y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-          rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+          y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+          rotate: { duration: 8, repeat: Infinity, ease: "easeInOut" },
         }}
-        className="relative z-10"
+        className="relative z-10 will-change-transform"
       >
         <div className="relative group">
-          <Rocket className="h-24 w-24 sm:h-32 sm:w-32 text-blue-400 drop-shadow-[0_0_20px_rgba(96,165,250,0.6)] transition-all group-hover:text-blue-300 group-hover:drop-shadow-[0_0_30px_rgba(96,165,250,0.8)]" />
-          
-          {/* Main Thruster Flame */}
-          <motion.div
-            animate={{
-              height: [10, 20, 10],
-              opacity: [0.6, 1, 0.6],
-              scaleX: [0.8, 1.2, 0.8],
-            }}
-            transition={{
-              duration: 0.15,
-              repeat: Infinity,
-            }}
-            className="absolute -bottom-5 sm:-bottom-7 left-1/2 -translate-x-1/2 w-4 sm:w-6 bg-gradient-to-b from-blue-400 via-blue-600 to-transparent rounded-full blur-[2px] sm:blur-[3px]"
-          />
+          {/* Replaced expensive drop-shadow with simple text coloring and an under-glow div */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(59,130,246,0.3)_0%,transparent_70%)] rounded-full -z-10 group-hover:bg-[radial-gradient(circle,rgba(59,130,246,0.4)_0%,transparent_70%)] transition-all opacity-50 will-change-transform" />
+          <Rocket className="h-24 w-24 sm:h-32 sm:w-32 text-blue-400 transition-all group-hover:text-blue-300 relative z-10" />
 
-          {/* Side Thrusters */}
+          {/* Optimized Thruster Flames */}
           <motion.div
             animate={{
-              height: [6, 10, 6],
-              opacity: [0.3, 0.7, 0.3],
+              height: [12, 18, 12],
+              opacity: [0.5, 0.8, 0.5],
             }}
             transition={{
-              duration: 0.1,
+              duration: 0.3,
               repeat: Infinity,
-              delay: 0.05,
+              ease: "linear"
             }}
-            className="absolute -bottom-1 sm:-bottom-2 left-4 sm:left-5 w-2 sm:w-2.5 bg-blue-300/40 rounded-full blur-[1px] sm:blur-[2px]"
-          />
-          <motion.div
-            animate={{
-              height: [6, 10, 6],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 0.1,
-              repeat: Infinity,
-              delay: 0.1,
-            }}
-            className="absolute -bottom-1 sm:-bottom-2 right-4 sm:right-5 w-2 sm:w-2.5 bg-blue-300/40 rounded-full blur-[1px] sm:blur-[2px]"
+            className="absolute -bottom-5 sm:-bottom-7 left-1/2 -translate-x-1/2 w-4 sm:w-6 bg-blue-500/60 rounded-full will-change-[height,opacity,transform]"
           />
         </div>
       </motion.div>

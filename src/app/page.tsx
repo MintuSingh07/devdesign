@@ -5,19 +5,19 @@ import { Contact } from "@/components/sections/Contact";
 import { BackgroundDecor } from "@/components/ui/BackgroundDecor";
 
 export default function Home() {
-    return (
-      <div className="relative min-h-screen w-full bg-[#020204] text-zinc-50 selection:bg-blue-500/30 selection:text-blue-200">
+  return (
+    <div className="relative min-h-screen w-full bg-[#020204] text-zinc-50 selection:bg-blue-500/30 selection:text-blue-200">
       <BackgroundDecor />
-      
+
       <Navbar />
-      
-      <main className="mx-auto max-w-7xl">
+
+      <main className="relative z-10 mx-auto max-w-7xl">
         <Hero />
         <Projects />
         <Contact />
       </main>
 
-      <footer className="w-full border-t border-zinc-800 bg-black/50 py-12 backdrop-blur-sm">
+      <footer className="relative z-10 w-full border-t border-zinc-800 bg-black/50 py-12 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-6 lg:px-24">
           <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
             <p className="text-sm text-zinc-500">
